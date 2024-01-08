@@ -69,6 +69,7 @@ public class CommentsApi {
       @PathVariable("slug") String slug,
       @PathVariable("id") String commentId,
       @AuthenticationPrincipal User user) {
+
     Item item =
         itemRepository.findBySlug(slug).orElseThrow(ResourceNotFoundException::new);
     return commentRepository
